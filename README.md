@@ -29,7 +29,7 @@ se tiver no linux
 para iniciar o server da api:
 > python .\manage.py runserver
 
-verá a seguinte saida:\n
+<p>verá a seguinte saida:</p>
 (blogapi) PS C:\programas\treina-web\framework_django\blogapi> py .\manage.py runserver
 Watching for file changes with StatReloader
 Performing system checks...
