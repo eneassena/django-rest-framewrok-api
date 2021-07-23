@@ -20,16 +20,16 @@ que nos permite configurar url padrões da api e diversos recursos que o djangor
 usamos o `pipenv shell` para ativa o ambiente virtual
 > pipenv shell
 
-*caso não active no windows digite o seguinte `activate`
+*Caso não active no windows digite o seguinte `activate`
 > activate
 
 se tiver no linux
-$ sudo source activate
+> $ sudo source activate
 
 para iniciar o server da api:
 > python .\manage.py runserver
 
-verá a seguinte saida:
+<p>verá a seguinte saida:</p>
 (blogapi) PS C:\programas\treina-web\framework_django\blogapi> py .\manage.py runserver
 Watching for file changes with StatReloader
 Performing system checks...
