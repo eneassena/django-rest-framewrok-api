@@ -41,4 +41,4 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 
 acessando a rota `/swagger-docs/` você verá a documentação da api 
-e todas a rotas disponíveis
+e todas a rotas disponíveis.
