@@ -4,8 +4,8 @@ neste projeto iniciamos uma pequena api com o objetivo de
 praticar o conceito os verbos rest entender como é seu funcionamento
 em aplicações.
 
-## tecnologias
-no projeto usamos python versão 3.9 e implementamos um framework de api
+## Tecnologias
+No projeto usamos python versão 3.9 e implementamos um framework de api
 para django que foi o djangorestframe e alguns módulos que foi bem úteis para
 a construção de authentication e permissions em nível de projeto ou de views,
 entre as configurações que tivemos usamos o modulo para urls django-cors-headers
@@ -15,7 +15,7 @@ que nos permite configurar url padrões da api e diversos recursos que o djangor
 * Rest Framework
 * django-cors-headers
 
-# usando o projeto
+# Usando o projeto
 
 usamos o `pipenv shell` para ativa o ambiente virtual
 > pipenv shell
