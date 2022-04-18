@@ -6,17 +6,14 @@ from rest_framework import authentication, permissions
 from estoque.serializers import produto_serializer
 import estoque.service.produto_service as produto_service 
 
-
+ 
 # Create your views here.
 class ProdutoList(APIView):
 	authentication_classes = [authentication.TokenAuthentication]
 	permission_classes = [permissions.IsAdminUser]
 
 
-	def get(self, request, format=None):
-		print(request.user)
-		print(request.auth)
-
+	def get(self, request, format=None): 
 		# request._user = <class 'django.contrib.auth.models.AnonymousUser'>
 		produto = produto_service.listar_produto()
 		serializer = produto_serializer.ProdutoSerializer(produto, many=True)
@@ -32,6 +29,9 @@ class ProdutoList(APIView):
 
 
 class ProdutoDetalhes(APIView):
+	authentication_classes = [authentication.TokenAuthentication]
+	permission_classes = [permissions.IsAdminUser]
+	
 	def get(self, request, pk, format=None):
 		produto = produto_service.get_object(pk)
 		serializer = produto_serializer.ProdutoSerializer(produto)
