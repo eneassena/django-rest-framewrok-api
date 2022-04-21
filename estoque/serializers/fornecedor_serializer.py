@@ -8,6 +8,7 @@ class FornecedorSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Fornecedor 
 		fields = [
+			'id',
 			'nomeContato',
 			'empresa',
 			'email',

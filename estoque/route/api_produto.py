@@ -12,10 +12,13 @@ class ProdutoList(APIView):
 	authentication_classes = [authentication.TokenAuthentication]
 	permission_classes = [permissions.IsAdminUser]
 
+	def _get_produto(self):
+		return produto_service.listar_produto()
+
 
 	def get(self, request, format=None): 
 		# request._user = <class 'django.contrib.auth.models.AnonymousUser'>
-		produto = produto_service.listar_produto()
+		produto = self._get_produto()
 		serializer = produto_serializer.ProdutoSerializer(produto, many=True)
 		return Response(serializer.data, status=status.HTTP_200_OK)
 

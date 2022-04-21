@@ -11,23 +11,20 @@ from estoque.models import Funcionario
  
 # Create your views here.
 class FuncionarioList(APIView):
-	authentication_classes = [authentication.TokenAuthentication]
-	# permission_classes = [permissions.IsAdminUser]
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAdminUser]
+    # request._user = <class 'django.contrib.auth.models.AnonymousUser'>
+    def get( self, request, format=None ):
+        funcionario = Funcionario.objects.all()
+        serializer = funcionario_serializer.FuncionarioSerializer(funcionario, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-	def get(self, request, format=None):
-
-		# request._user = <class 'django.contrib.auth.models.AnonymousUser'>
-		funcionario = Funcionario.objects.all()
-		serializer = funcionario_serializer.FuncionarioSerializer(funcionario, many=True)
-		return Response(serializer.data, status=status.HTTP_200_OK)
-
-	def post(self, request, format=None):
-		serializer = funcionario_serializer.FuncionarioSerializer(data=request.data)
-		if serializer.is_valid():
-			serializer.save() 
-			return Response(serializer.data, status=status.HTTP_201_CREATED)
-		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, format=None):
+        serializer = funcionario_serializer.FuncionarioSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save() 
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class FuncionarioDetalhes(APIView):

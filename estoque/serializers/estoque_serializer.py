@@ -8,6 +8,7 @@ class EstoqueSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Estoque 
 		fields = [
+			'id',
 			'produto_id',
 			'funcionario_id',
 			'dataEstoque',

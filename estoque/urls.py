@@ -1,8 +1,7 @@
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 import estoque.route.api_produto as api_produto
-from estoque.route import api_funcionario, api_fornecedor, api_estoque
-
+from estoque.route import api_funcionario, api_fornecedor, api_estoque,api_user
 
 
 app_label= 'estoque'
@@ -20,7 +19,8 @@ urlpatterns = [
 	path('estoque', api_estoque.EstoqueList.as_view()),
 	path('estoque/<int:pk>', api_estoque.EstoqueDetalhes.as_view()),
 
-
+	path('user', api_user.UserCreate.as_view()),
+	path('user/<int:pk>', api_user.UserDetelhas.as_view())
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
